@@ -59,6 +59,7 @@ const Signup = () => {
 
             // Add User Detail
             addDoc(userRefrence, user);
+            localStorage.setItem("users", JSON.stringify(user));
 
             setUserSignup({
                 name: "",
@@ -69,7 +70,7 @@ const Signup = () => {
             toast.success("Signup Successfully");
 
             setLoading(false);
-            navigate('/login')
+            navigate('/');
         } catch (error) {
             console.log(error);
             setLoading(false);
